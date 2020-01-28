@@ -1,6 +1,7 @@
-import test from 'ava';
-import isPromise from 'is-promise';
-import m from './';
+'use strict';
+const test = require('ava');
+const isPromise = require('is-promise');
+const m = require('.');
 
 const invoke = (guard, body) => {
 	const ctx = {
@@ -8,9 +9,9 @@ const invoke = (guard, body) => {
 	};
 
 	if (Array.isArray(body)) {
-		ctx.body = body.map(x => Object.assign({}, x));
+		ctx.body = body.map(x => ({...x}));
 	} else if (!isPromise(body)) {
-		ctx.body = Object.assign({}, body);
+		ctx.body = {...body};
 	}
 
 	guard(ctx);

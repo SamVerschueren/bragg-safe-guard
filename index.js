@@ -16,16 +16,14 @@ const guard = (input, props) => {
 	return input;
 };
 
-module.exports = function () {
-	const props = Array.from(arguments);
-
+module.exports = (...props) => {
 	return ctx => {
 		if (!ctx.body || props.length === 0) {
 			return;
 		}
 
 		if (isPromise(ctx.body)) {
-			ctx.body = ctx.body.then(x => guard(x, props));
+			ctx.body = ctx.body.then(x => guard(x, props)); // eslint-disable-line promise/prefer-await-to-then
 		} else {
 			ctx.body = guard(ctx.body, props);
 		}
