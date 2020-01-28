@@ -1,6 +1,6 @@
 {
 	"name": "bragg-safe-guard",
-	"version": "1.0.0",
+	"version": "2.0.0",
 	"description": "Prevents leaking information outside the bragg context",
 	"license": "MIT",
 	"repository": "SamVerschueren/bragg-safe-guard",
