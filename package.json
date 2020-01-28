@@ -30,7 +30,7 @@
 		"framework"
 	],
 	"dependencies": {
-		"dot-prop": "^3.0.0",
+		"dot-prop": "^5.2.0",
 		"is-promise": "^2.1.0"
 	},
 	"devDependencies": {
